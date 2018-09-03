@@ -59,7 +59,7 @@ and open the template in the editor.
             foreach ($item_par_pages as $key => $nbr_item) {
 
                 for ($i = 0; $i < $nbr_item; $i++) {
-//                    echo '<div><img src="' . $value->config->items[$i]->images[0]->big . '" style="width:60px;height:60px;;vertical-align: middle;"/>';
+//                    echo '<div><img src="' . $value->config->items[$i]->images[0]->big . '" style="width:60px;height:60px;vertical-align: middle;"/>';
 //                    echo ' [' . $i . ']=====>[' . $value->config->items[$i]->id . ']' . print_r($value->config->items[$i]->artist) . '</div><br>';
                     if (isset($value->config->items[$i]->sizeVariants)) {
                         foreach ($value->config->items[$i]->sizeVariants as $k => $v) {
