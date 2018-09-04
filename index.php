@@ -11,26 +11,29 @@ and open the template in the editor.
     </head>
     <style>
         div{
-
+            margin: 2px;
             padding-left: 1px;
             padding-right: 1px;
+            white-space: normal;
+  overflow: hidden;
 
         }
         div.stock {
-            
+
             /*border: dotted;*/
             width: 70px;
             font-family: sans-serif;
             background-color: lightgreen;
             font-size: 0.8em;
             display: inline-block;
-/*            vertical-align: top;*/
+            /*            vertical-align: top;*/
             /*position: absolute;*/
         }
         div.soldout {
             width: 80px;
             font-size: 0.8em;
-            /*border: double;*/
+            border: double;
+            border-width: thin;
             background-color: lightcoral;
             font-family: fantasy;
             display: inline-block;
@@ -127,12 +130,12 @@ and open the template in the editor.
                             if ($v->soldOut) {
                                 $data [$genre][$value->config->items[$i]->id][$v->id] = array('marque' => $value->config->items[$i]->artist, 'pointure' => $v->name, 'rupture' => $v->soldOut);
 
-                                echo '<div class="soldout">';
+                                echo '<div id="' . $v->id . '" class="soldout">';
                                 echo $v->id . ':<br>';
                                 echo $v->name;
                                 echo '</div>';
                             } else {
-                                echo '<div class="stock">';
+                                echo '<div id="' . $v->id . '" class="stock">';
                                 echo $v->id . ':';
                                 echo $v->name;
                                 echo '</div>';
