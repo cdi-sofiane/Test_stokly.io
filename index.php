@@ -37,7 +37,7 @@ and open the template in the editor.
             foreach ($shoes as $genre => $v) {
                 echo '<div style=""><br><a> Genre => ' . $genre . '</a><a> '.  $pages. '</a></div><br>';
                 foreach ($v->page->content as $key => $value) {
-                    if ($key == 2) {
+                    if ($key == 1) {
 
                         $item_par_pages = [$genre => $value->config->parameters->per];
 
