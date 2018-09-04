@@ -11,15 +11,21 @@ and open the template in the editor.
     </head>
     <style>
         div{
+           
             padding-left: 1px;
             padding-right: 1px;
+            
         }
         div.stock {
     /*border: dotted;*/
+     width: 70px;
     font-family: sans-serif;
     background-color: lightgreen;
+    font-size: 0.8em;
 }
    div.soldout {
+        width: 80px;
+        font-size: 0.8em;
     /*border: double;*/
     background-color: lightcoral;
     font-family: fantasy;
@@ -74,17 +80,28 @@ and open the template in the editor.
 
         function nombres_de_shoes_par_pages($genre, $value, $item_par_pages) {
             echo '<table style="align-center">';
-            foreach ($item_par_pages as $key => $nbr_item) {
-                echo '<table>';
-
-                echo '<tr ">';
+            echo '<tr ">';
                 echo '<th><div>';
                 echo $value->config->seo->headline;
-                echo '</div>';
-                for ($i = 0; $i < $nbr_item; $i++) {
+                echo '</div></th>';
+            foreach ($item_par_pages as $key => $nbr_item) {
+               
 
-                    echo '<tr><th><div ><img src="' . $value->config->items[$i]->images[0]->big . '" style="width:60px;height:60px;vertical-align: middle;"/></div></th>';
-                    echo '<th>[' . $value->config->items[$i]->id . ']' . ($value->config->items[$i]->artist) . '';
+                
+                echo '<th><div>';
+                echo 'Image';
+                echo '</div></th>';
+                echo '<th><div>';
+                echo 'id';
+                echo '</div></th>';
+                echo '<th><div>';
+                echo 'marque';
+                echo '</div></th>';
+                for ($i = 0; $i < $nbr_item; $i++) {
+                    echo '<tr><th>';
+                    echo '<td><div ><img src="' . $value->config->items[$i]->images[0]->big . '" style="width:60px;height:60px;vertical-align: middle;"/></div></td>';
+                    echo '<td><div >[' . $value->config->items[$i]->id . ']</div ></td>';
+                    echo '<td><div >'.$value->config->items[$i]->artist .'</div ></td>';
                     if (isset($value->config->items[$i]->sizeVariants)) {
                         foreach ($value->config->items[$i]->sizeVariants as $k => $v) {
                             if ($v->soldOut) {
@@ -102,11 +119,12 @@ and open the template in the editor.
                             }
                         }
                     }
-                     echo '</div></th>';
+                     echo '</div></th><tr>';
                 }
-               echo'</th></tr>';
-            }
+               echo'</tr>';
             echo '</table>';
+            }
+            
             $data['item_par_page'] = $nbr_item;
 //            header('location : index.php ',$data);
             echo print_r(json_encode($data));
