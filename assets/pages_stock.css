@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 sept. 2018, 11:18:24
+    Author     : Sekio
+*/
+
+div{
+    margin: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
+    overflow: hidden;
+
+}
+div.stock {
+
+    /*border: dotted;*/
+    width: 70px;
+    font-family: cursive;
+    background-color: lightgreen;
+    font-size: 0.8em;
+    display: inline-block;
+}
+div.soldout {
+    width: 80px;
+    font-size: 1em;
+    border: double;
+    border-width: thin;
+    background-color: lightcoral;
+    font-family: cursive;
+    
+    display: inline-block;
+}
+td{
+
+    border: double;
+    border-width: thin;
+    padding-left: 15px ;
+    padding-right: 15px;
+}
+img{
+    width:60px;height:60px;vertical-align: middle;
+}
+tr{
+    border: double;
+    border-width: thin;
+}
+th{
+    border: double;
+    border-width: thin;
+}
+th.top{
+    font-size: 2.2em; 
+    font-family: serif;
+    display: inline-block;
+    white-space:nowrap;
+}
+th.top ~ td {
+    font-size: 2em; 
+
+}
+[data-gender="Women"]{
+    background-color: palevioletred;
+}
+[data-gender="Men"]{
+    background-color: #44A6EF;
+}
+.Stocks{
+    margin-left:auto; 
+    margin-right:auto;
+}
+.pages{
+    margin-left:40%; 
+    margin-right:40%;
+    font-family: cursive;
+    font-style: oblique;
+    font-size: 3em;
+}
